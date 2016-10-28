@@ -690,6 +690,7 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
 //            } else {
 //                animation = mSelectAnimation;
 //            }
+            animation = mSelectAnimation;
             for (Animator anim : animation.getAnimators(holder.itemView)) {
                 anim.setDuration(mDuration).start();
                 anim.setInterpolator(mInterpolator);

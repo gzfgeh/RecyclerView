@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.jude.easyrecyclerview.decoration.DividerItemDecoration;
 import com.jude.easyrecyclerview.swipe.SwipeRefreshLayout;
 
 
@@ -564,11 +565,14 @@ public class EasyRecyclerView extends FrameLayout {
 
     public void setAdapterDefaultConfig(RecyclerArrayAdapter adapter, RecyclerArrayAdapter.OnLoadMoreListener listener, android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener refreshListener){
         if (adapter != null) {
-            setAdapterWithProgress(adapter);
             adapter.setMore(listener);
             adapter.setNoMore(R.layout.view_nomore);
             adapter.setError(R.layout.view_error);
+            adapter.isLoadAnimation(true);
             setRefreshListener(refreshListener);
+            addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST));
+            setRefreshingColorResources(android.R.color.holo_blue_dark);
+            setAdapterWithProgress(adapter);
         }
     }
 
