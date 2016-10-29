@@ -28,6 +28,7 @@ public class MainActivity extends AutoLayoutActivity implements RecyclerArrayAda
 
     private int page = 0;
     private boolean hasNetWork = true;
+    public static int time = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

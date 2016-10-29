@@ -72,7 +72,6 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
     private Interpolator mInterpolator = new LinearInterpolator();
     private int mDuration = 100;
     private BaseAnimation mSelectAnimation = new ScaleInAnimation();
-    private boolean mOpenAnimationEnable = false;
 
     RecyclerView.AdapterDataObserver mObserver;
 
@@ -682,24 +681,15 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
 
     protected abstract void convert(BaseViewHolder viewHolder, T item);
 
-    private void addAnimation(RecyclerView.ViewHolder holder) {
-        if (mOpenAnimationEnable) {
-            BaseAnimation animation = mSelectAnimation;
-//            if (mCustomAnimation != null) {
-//                animation = mCustomAnimation;
-//            } else {
-//                animation = mSelectAnimation;
-//            }
-            animation = mSelectAnimation;
-            for (Animator anim : animation.getAnimators(holder.itemView)) {
-                anim.setDuration(mDuration).start();
-                anim.setInterpolator(mInterpolator);
-            }
-        }
+    public void setItemAnimation(BaseAnimation animation){
+        mSelectAnimation = animation;
     }
 
-    public void isLoadAnimation(boolean b) {
-        this.mOpenAnimationEnable = b;
+    private void addAnimation(RecyclerView.ViewHolder holder) {
+        for (Animator anim : mSelectAnimation.getAnimators(holder.itemView)) {
+            anim.setDuration(mDuration).start();
+            anim.setInterpolator(mInterpolator);
+        }
     }
 
     protected View getItemView(int layoutResId, ViewGroup parent) {

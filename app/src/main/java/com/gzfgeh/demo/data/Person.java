@@ -1,9 +1,10 @@
 package com.gzfgeh.demo.data;
 
+
 /**
  * Created by Mr.Jude on 2015/7/18.
  */
-public class Person {
+public class Person{
     private String face;
     private String name;
 

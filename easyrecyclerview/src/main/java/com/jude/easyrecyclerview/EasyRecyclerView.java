@@ -3,6 +3,8 @@ package com.jude.easyrecyclerview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.ColorRes;
+import android.support.v7.util.DiffUtil;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.jude.easyrecyclerview.animation.ScaleInAnimation;
 import com.jude.easyrecyclerview.decoration.DividerItemDecoration;
 import com.jude.easyrecyclerview.swipe.SwipeRefreshLayout;
 
@@ -563,13 +566,20 @@ public class EasyRecyclerView extends FrameLayout {
         return null;
     }
 
+    /**
+     * 默认配置
+     * @param adapter
+     * @param listener
+     * @param refreshListener
+     */
     public void setAdapterDefaultConfig(RecyclerArrayAdapter adapter, RecyclerArrayAdapter.OnLoadMoreListener listener, android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener refreshListener){
         if (adapter != null) {
-            adapter.setMore(listener);
+            if(listener != null)
+                adapter.setMore(listener);
             adapter.setNoMore(R.layout.view_nomore);
             adapter.setError(R.layout.view_error);
-            adapter.isLoadAnimation(true);
-            setRefreshListener(refreshListener);
+            if (refreshListener != null)
+                setRefreshListener(refreshListener);
             addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST));
             setRefreshingColorResources(android.R.color.holo_blue_dark);
             setAdapterWithProgress(adapter);
