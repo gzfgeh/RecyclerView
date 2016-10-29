@@ -1,4 +1,4 @@
-package com.gzfgeh.grecyclerview.adapter;
+package com.gzfgeh.adapter;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.gzfgeh.grecyclerview.GRecyclerView;
+import com.gzfgeh.GRecyclerView;
 
 /**
  * Created by Mr.Jude on 2015/8/18.

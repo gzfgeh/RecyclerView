@@ -1,1 +1,1 @@
-include ':app', ':easyrecyclerview'
+include ':app', ':grecyclerview'

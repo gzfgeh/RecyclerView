@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gzfgeh.grecyclerview.swipe;
+package com.gzfgeh.swipe;
 
 import android.view.animation.Interpolator;
 import android.view.animation.Animation;

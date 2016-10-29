@@ -1,4 +1,4 @@
-package com.gzfgeh.grecyclerview.decoration;
+package com.gzfgeh.decoration;
 
 import android.content.Context;
 import android.content.res.TypedArray;

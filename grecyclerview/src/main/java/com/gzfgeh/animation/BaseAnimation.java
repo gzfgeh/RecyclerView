@@ -1,4 +1,4 @@
-package com.gzfgeh.grecyclerview.animation;
+package com.gzfgeh.animation;
 
 import android.animation.Animator;
 import android.view.View;

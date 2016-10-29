@@ -14,10 +14,10 @@ import android.widget.CompoundButton;
 
 import com.gzfgeh.demo.data.DataProvider;
 import com.gzfgeh.demo.data.Person;
-import com.gzfgeh.grecyclerview.GRecyclerView;
-import com.gzfgeh.grecyclerview.adapter.BaseViewHolder;
-import com.gzfgeh.grecyclerview.adapter.RecyclerArrayAdapter;
-import com.gzfgeh.grecyclerview.defaultInterface.DefaultRecyclerViewItem;
+import com.gzfgeh.GRecyclerView;
+import com.gzfgeh.adapter.BaseViewHolder;
+import com.gzfgeh.adapter.RecyclerArrayAdapter;
+import com.gzfgeh.defaultInterface.DefaultRecyclerViewItem;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 public class MainActivity extends AutoLayoutActivity implements RecyclerArrayAdapter.OnLoadMoreListener, SwipeRefreshLayout.OnRefreshListener{

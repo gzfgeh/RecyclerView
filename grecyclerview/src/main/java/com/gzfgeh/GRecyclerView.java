@@ -1,4 +1,4 @@
-package com.gzfgeh.grecyclerview;
+package com.gzfgeh;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,9 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.gzfgeh.grecyclerview.adapter.RecyclerArrayAdapter;
-import com.gzfgeh.grecyclerview.decoration.DividerItemDecoration;
-import com.gzfgeh.grecyclerview.swipe.SwipeRefreshLayout;
+import com.gzfgeh.adapter.RecyclerArrayAdapter;
+import com.gzfgeh.decoration.DividerItemDecoration;
+import com.gzfgeh.grecyclerview.R;
+import com.gzfgeh.swipe.SwipeRefreshLayout;
 
 
 public class GRecyclerView extends FrameLayout {

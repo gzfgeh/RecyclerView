@@ -1,8 +1,8 @@
-package com.gzfgeh.grecyclerview.defaultInterface;
+package com.gzfgeh.defaultInterface;
 
 import android.view.View;
 
-import com.gzfgeh.grecyclerview.adapter.RecyclerArrayAdapter;
+import com.gzfgeh.adapter.RecyclerArrayAdapter;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package com.gzfgeh.grecyclerview.adapter;
+package com.gzfgeh.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;

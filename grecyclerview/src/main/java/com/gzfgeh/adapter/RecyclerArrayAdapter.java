@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gzfgeh.grecyclerview.adapter;
+package com.gzfgeh.adapter;
 
 import android.animation.Animator;
 import android.content.Context;
@@ -28,10 +28,10 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.gzfgeh.grecyclerview.GRecyclerView;
+import com.gzfgeh.GRecyclerView;
+import com.gzfgeh.animation.BaseAnimation;
+import com.gzfgeh.animation.ScaleInAnimation;
 import com.gzfgeh.grecyclerview.R;
-import com.gzfgeh.grecyclerview.animation.BaseAnimation;
-import com.gzfgeh.grecyclerview.animation.ScaleInAnimation;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
