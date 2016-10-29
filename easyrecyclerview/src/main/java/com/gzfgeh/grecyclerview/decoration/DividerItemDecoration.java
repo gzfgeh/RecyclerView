@@ -1,4 +1,4 @@
-package com.jude.easyrecyclerview.decoration;
+package com.gzfgeh.grecyclerview.decoration;
 
 import android.content.Context;
 import android.content.res.TypedArray;

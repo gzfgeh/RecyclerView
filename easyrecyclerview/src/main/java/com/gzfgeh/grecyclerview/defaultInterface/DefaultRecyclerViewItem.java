@@ -1,8 +1,8 @@
-package com.jude.easyrecyclerview.defaultInterface;
+package com.gzfgeh.grecyclerview.defaultInterface;
 
 import android.view.View;
 
-import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.gzfgeh.grecyclerview.adapter.RecyclerArrayAdapter;
 
 /**
  * Description:

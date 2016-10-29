@@ -2,7 +2,6 @@ package com.gzfgeh.demo;
 
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,14 +14,14 @@ import android.widget.CompoundButton;
 
 import com.gzfgeh.demo.data.DataProvider;
 import com.gzfgeh.demo.data.Person;
-import com.jude.easyrecyclerview.EasyRecyclerView;
-import com.jude.easyrecyclerview.adapter.BaseViewHolder;
-import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
-import com.jude.easyrecyclerview.defaultInterface.DefaultRecyclerViewItem;
+import com.gzfgeh.grecyclerview.GRecyclerView;
+import com.gzfgeh.grecyclerview.adapter.BaseViewHolder;
+import com.gzfgeh.grecyclerview.adapter.RecyclerArrayAdapter;
+import com.gzfgeh.grecyclerview.defaultInterface.DefaultRecyclerViewItem;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 public class MainActivity extends AutoLayoutActivity implements RecyclerArrayAdapter.OnLoadMoreListener, SwipeRefreshLayout.OnRefreshListener{
-    private EasyRecyclerView recyclerView;
+    private GRecyclerView recyclerView;
     private RecyclerArrayAdapter adapter;
     private Handler handler = new Handler();
 
@@ -34,7 +33,7 @@ public class MainActivity extends AutoLayoutActivity implements RecyclerArrayAda
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = (EasyRecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = (GRecyclerView) findViewById(R.id.recyclerView);
         adapter = new RecyclerArrayAdapter<Person>(this, R.layout.item_person){
 
             @Override

@@ -1,4 +1,4 @@
-package com.jude.easyrecyclerview.adapter;
+package com.gzfgeh.grecyclerview.adapter;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.jude.easyrecyclerview.EasyRecyclerView;
+import com.gzfgeh.grecyclerview.GRecyclerView;
 
 /**
  * Created by Mr.Jude on 2015/8/18.
@@ -329,8 +329,8 @@ public class DefaultEventDelegate implements EventDelegate {
 
 
     private static void log(String content){
-        if (EasyRecyclerView.DEBUG){
-            Log.i(EasyRecyclerView.TAG,content);
+        if (GRecyclerView.DEBUG){
+            Log.i(GRecyclerView.TAG,content);
         }
     }
 }

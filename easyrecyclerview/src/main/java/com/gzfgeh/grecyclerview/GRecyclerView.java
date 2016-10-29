@@ -1,11 +1,8 @@
-package com.jude.easyrecyclerview;
+package com.gzfgeh.grecyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.ColorRes;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.AdapterDataObserver;
@@ -17,13 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
-import com.jude.easyrecyclerview.animation.ScaleInAnimation;
-import com.jude.easyrecyclerview.decoration.DividerItemDecoration;
-import com.jude.easyrecyclerview.swipe.SwipeRefreshLayout;
+import com.gzfgeh.grecyclerview.adapter.RecyclerArrayAdapter;
+import com.gzfgeh.grecyclerview.decoration.DividerItemDecoration;
+import com.gzfgeh.grecyclerview.swipe.SwipeRefreshLayout;
 
 
-public class EasyRecyclerView extends FrameLayout {
+public class GRecyclerView extends FrameLayout {
     public static final String TAG = "EasyRecyclerView";
     public static boolean DEBUG = false;
     protected RecyclerView mRecycler;
@@ -60,18 +56,18 @@ public class EasyRecyclerView extends FrameLayout {
         return mRecycler;
     }
 
-    public EasyRecyclerView(Context context) {
+    public GRecyclerView(Context context) {
         super(context);
         initView();
     }
 
-    public EasyRecyclerView(Context context, AttributeSet attrs) {
+    public GRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(attrs);
         initView();
     }
 
-    public EasyRecyclerView(Context context, AttributeSet attrs, int defStyle) {
+    public GRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initAttrs(attrs);
         initView();
@@ -252,9 +248,9 @@ public class EasyRecyclerView extends FrameLayout {
 
 
     public static class EasyDataObserver extends AdapterDataObserver {
-        private EasyRecyclerView recyclerView;
+        private GRecyclerView recyclerView;
 
-        public EasyDataObserver(EasyRecyclerView recyclerView) {
+        public EasyDataObserver(GRecyclerView recyclerView) {
             this.recyclerView = recyclerView;
         }
 

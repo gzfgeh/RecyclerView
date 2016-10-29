@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package com.jude.easyrecyclerview.swipe;
+package com.gzfgeh.grecyclerview.swipe;
 
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;

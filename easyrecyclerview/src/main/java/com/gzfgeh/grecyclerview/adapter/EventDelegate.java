@@ -1,4 +1,4 @@
-package com.jude.easyrecyclerview.adapter;
+package com.gzfgeh.grecyclerview.adapter;
 
 import android.view.View;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jude.easyrecyclerview.swipe;
+package com.gzfgeh.grecyclerview.swipe;
 
 import android.content.Context;
 import android.content.res.Resources;

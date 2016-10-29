@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jude.easyrecyclerview.adapter;
+package com.gzfgeh.grecyclerview.adapter;
 
 import android.animation.Animator;
 import android.content.Context;
@@ -28,10 +28,10 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.jude.easyrecyclerview.EasyRecyclerView;
-import com.jude.easyrecyclerview.R;
-import com.jude.easyrecyclerview.animation.BaseAnimation;
-import com.jude.easyrecyclerview.animation.ScaleInAnimation;
+import com.gzfgeh.grecyclerview.GRecyclerView;
+import com.gzfgeh.grecyclerview.R;
+import com.gzfgeh.grecyclerview.animation.BaseAnimation;
+import com.gzfgeh.grecyclerview.animation.ScaleInAnimation;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
@@ -364,7 +364,7 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
 
     @Override
     public void registerAdapterDataObserver(RecyclerView.AdapterDataObserver observer) {
-        if (observer instanceof EasyRecyclerView.EasyDataObserver){
+        if (observer instanceof GRecyclerView.EasyDataObserver){
             mObserver = observer;
         }else {
             super.registerAdapterDataObserver(observer);
@@ -664,12 +664,6 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
         OnBindViewHolder(holder,position-headers.size());
     }
 
-    /**
-     * 修改部分
-     * @param holder
-     * @param position
-     */
-
 //    public void OnBindViewHolder(BaseViewHolder holder, final int position){
 //        holder.setData(getItem(position));
 //    }
@@ -781,8 +775,8 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
     }
 
     private static void log(String content){
-        if (EasyRecyclerView.DEBUG){
-            Log.i(EasyRecyclerView.TAG,content);
+        if (GRecyclerView.DEBUG){
+            Log.i(GRecyclerView.TAG,content);
         }
     }
 }

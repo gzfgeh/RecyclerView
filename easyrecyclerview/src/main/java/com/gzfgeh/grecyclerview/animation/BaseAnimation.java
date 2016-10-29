@@ -1,4 +1,4 @@
-package com.jude.easyrecyclerview.animation;
+package com.gzfgeh.grecyclerview.animation;
 
 import android.animation.Animator;
 import android.view.View;
