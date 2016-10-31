@@ -9,4 +9,4 @@
 8、增加DefaultAdapter  设置默认选项.
 9、修改showError 空的时候Error和不空的时候Error.
 10、修改数据为空的时候，自定义设置点击刷新.
-11、增加的item动画.
+11、增加的item动画
