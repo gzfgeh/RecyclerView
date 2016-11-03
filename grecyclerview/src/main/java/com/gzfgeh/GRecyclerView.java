@@ -193,6 +193,14 @@ public class GRecyclerView extends FrameLayout {
                 @Override
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     super.onScrolled(recyclerView, dx, dy);
+                    if (recyclerView.getLayoutManager() instanceof LinearLayoutManager){
+                        int pos = ((LinearLayoutManager)(recyclerView.getLayoutManager())).findFirstCompletelyVisibleItemPosition();
+                        if (pos == 0)
+                            ((RecyclerArrayAdapter)(mRecycler.getAdapter())).setLoadItemAnimator(false);
+                        else
+                            ((RecyclerArrayAdapter)(mRecycler.getAdapter())).setLoadItemAnimator(true);
+                    }
+
                     if (mExternalOnScrollListener != null)
                         mExternalOnScrollListener.onScrolled(recyclerView, dx, dy);
 
@@ -569,10 +577,27 @@ public class GRecyclerView extends FrameLayout {
      * @param listener
      * @param refreshListener
      */
-    public void setAdapterDefaultConfig(RecyclerArrayAdapter adapter, RecyclerArrayAdapter.OnLoadMoreListener listener, android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener refreshListener){
+    public void setAdapterDefaultConfig(RecyclerArrayAdapter adapter, android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener refreshListener, RecyclerArrayAdapter.OnLoadMoreListener listener){
         if (adapter != null) {
             if(listener != null)
                 adapter.setMore(listener);
+            adapter.setNoMore(R.layout.view_nomore);
+            adapter.setError(R.layout.view_error);
+            if (refreshListener != null)
+                setRefreshListener(refreshListener);
+            addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST));
+            setRefreshingColorResources(android.R.color.holo_blue_dark);
+            setAdapterWithProgress(adapter);
+        }
+    }
+
+    /**
+     * 默认配置
+     * @param adapter
+     * @param refreshListener
+     */
+    public void setAdapterDefaultConfig(RecyclerArrayAdapter adapter, android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener refreshListener){
+        if (adapter != null) {
             adapter.setNoMore(R.layout.view_nomore);
             adapter.setError(R.layout.view_error);
             if (refreshListener != null)

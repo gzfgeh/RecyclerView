@@ -72,6 +72,7 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
     private Interpolator mInterpolator = new LinearInterpolator();
     private int mDuration = 100;
     private BaseAnimation mSelectAnimation = new ScaleInAnimation();
+    private boolean isLoadItemAnimator = false;
 
     RecyclerView.AdapterDataObserver mObserver;
 
@@ -668,9 +669,15 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
 //        holder.setData(getItem(position));
 //    }
 
+
+    public void setLoadItemAnimator(boolean loadItemAnimator) {
+        isLoadItemAnimator = loadItemAnimator;
+    }
+
     private void OnBindViewHolder(BaseViewHolder holder, final int position){
         convert(holder, getItem(position));
-        addAnimation(holder);
+        if (isLoadItemAnimator)
+            addAnimation(holder);
     }
 
     protected abstract void convert(BaseViewHolder viewHolder, T item);
