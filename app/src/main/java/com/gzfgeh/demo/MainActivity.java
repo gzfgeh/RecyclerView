@@ -60,6 +60,13 @@ public class MainActivity extends AutoLayoutActivity implements RecyclerArrayAda
                 return true;
             }
         });
+
+        adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
         recyclerView.setAdapterDefaultConfig(adapter, this, this);
         recyclerView.setErrorBtnID(R.id.btn);
         onRefresh();
