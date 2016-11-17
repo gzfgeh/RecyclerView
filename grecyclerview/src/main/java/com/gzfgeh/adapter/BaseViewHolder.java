@@ -23,6 +23,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 
 public class BaseViewHolder extends RecyclerView.ViewHolder {
 
@@ -160,6 +162,28 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     public  BaseViewHolder setImageUrl(int viewId, String imageUrl, int defResourceId, BitmapTransformation... transformations) {
         ImageView view = getView(viewId);
         Glide.with(context).load(imageUrl).crossFade().placeholder(defResourceId).transform(transformations).into(view);
+        return this;
+    }
+
+    /**
+     * 比例缩放图片
+     * @param viewId
+     * @param imageUrl
+     * @param defResourceId
+     * @return
+     */
+    public  BaseViewHolder setImageUrl(int viewId, String imageUrl, int defResourceId, final int widthPix) {
+        final ImageView view = getView(viewId);
+        Glide.with(context).load(imageUrl).asBitmap().placeholder(defResourceId)
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        ViewGroup.LayoutParams params = view.getLayoutParams();
+                        params.height = resource.getHeight()*resource.getWidth()/widthPix;
+                        view.setLayoutParams(params);
+                        view.setImageBitmap(resource);
+                    }
+                });
         return this;
     }
 
