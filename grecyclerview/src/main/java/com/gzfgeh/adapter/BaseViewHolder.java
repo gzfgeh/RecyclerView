@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.SparseArray;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -168,6 +169,18 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      */
     public  BaseViewHolder setImageBitmap(int viewId, Bitmap bitmap) {
         ImageView view = getView(viewId);
+        view.setImageBitmap(bitmap);
+        return this;
+    }
+
+    /**
+     * Add an action to set the image of an image view. Can be called multiple times.
+     */
+    public  BaseViewHolder setImageBitmap(int viewId, Bitmap bitmap, int widthPx) {
+        ImageView view = getView(viewId);
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.height = bitmap.getHeight() * bitmap.getWidth() / widthPx;
+        view.setLayoutParams(params);
         view.setImageBitmap(bitmap);
         return this;
     }
