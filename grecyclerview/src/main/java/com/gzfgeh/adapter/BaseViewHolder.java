@@ -179,7 +179,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                         ViewGroup.LayoutParams params = view.getLayoutParams();
-                        params.height = resource.getHeight()*resource.getWidth()/widthPix;
+                        params.height = resource.getHeight()*widthPix /resource.getWidth();
                         view.setLayoutParams(params);
                         view.setImageBitmap(resource);
                     }
